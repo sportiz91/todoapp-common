@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Encrypting code -->
+    <meta charset="UTF-8" />
+
+    <!-- IE compatible -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Linking to external CSS -->
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <!-- Linking to external JS. defer attribute to load script when page finished loading -->
+    <script src="behaviour.js" defer></script>
+    <title>Mum's Lists</title>
+  </head>
+  <body>
+    <section class="app">
+      <div class="app-container">
+        <h1 class="global-title">Mummy's Lists</h1>
+
+        <div class="lists">
+          <h2 class="lists-title">My Lists</h2>
+
+          <ul class="lists-container" data-lists-container></ul>
+
+          <form class="new-list-form form" data-new-list-form>
+            <input
+              type="text"
+              class="new-list-input input"
+              placeholder="New List name"
+              data-new-list-input
+            />
+            <button class="btn create">+</button>
+          </form>
+        </div>
+
+        <div class="todo-container" data-todo-container>
+          <div class="todo-header">
+            <h2 class="todo-header-title" data-todo-header-title></h2>
+            <p class="todo-header-remaining" data-todo-header-remaining></p>
+          </div>
+
+          <div class="todo-body">
+            <div class="tasks-container" data-task-container></div>
+
+            <form class="new-task-form form" data-new-task-form>
+              <input
+                type="text"
+                class="new-task-input input"
+                placeholder="New Task name"
+                data-new-task-input
+              />
+              <button class="btn create">+</button>
+            </form>
+
+            <div class="delete-stuff">
+              <button
+                class="btn clear-completed-tasks"
+                data-clear-completed-tasks
+              >
+                Clear completed tasks
+              </button>
+              <button class="btn delete-list" data-delete-list>
+                Delete list
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <template data-template>
+      <div class="task">
+        <input type="checkbox" class="task-checkbox" />
+        <label class="task-label">
+          <span class="task-custom-checkbox"></span>
+        </label>
+      </div>
+    </template>
+
+    <footer>
+      <p>
+        Coded by:
+        <a href="https://github.com/sportiz91" target="_blank">Lasantoneta</a>
+      </p>
+    </footer>
+  </body>
+</html>
