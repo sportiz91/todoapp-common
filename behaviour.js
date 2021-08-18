@@ -50,6 +50,12 @@ listsContainer.addEventListener("click", (e) => {
   if (todoContainer.style.display === "none") {
     todoContainer.style.display = "";
   }
+  if (deleteListButton.style.display === "none") {
+    deleteListButton.style.display = "";
+  }
+  if (clearCompletedTaskButton.style.display === "none") {
+    clearCompletedTaskButton.style.display = "";
+  }
   selectedList = e.target.id;
   saveAndRender();
 });
@@ -99,6 +105,9 @@ deleteListButton.addEventListener("click", (e) => {
   const listToDelete = listsArray.find((list) => list.id === selectedList);
   listsArray = listsArray.filter((list) => list.id !== listToDelete.id);
   todoContainer.style.display = "none";
+  deleteListButton.style.display = "none";
+  clearCompletedTaskButton.style.display = "none";
+  selectedList = null;
   saveAndRender();
 });
 
@@ -136,6 +145,12 @@ function save() {
 function render() {
   clearListsOrTasks();
   renderLists();
+
+  if (selectedList == "null") {
+    todoContainer.style.display = "none";
+    deleteListButton.style.display = "none";
+    clearCompletedTaskButton.style.display = "none";
+  }
 
   listsArray.forEach((list) => {
     const selectedListId = list.id;
@@ -209,6 +224,6 @@ function updateRemainingTasks(list) {
 
 render();
 
-if (document.querySelector(".tasks-container").firstElementChild == null) {
-  todoContainer.style.display = "none";
-}
+// if (document.querySelector(".tasks-container").firstElementChild == null) {
+//   todoContainer.style.display = "none";
+// }

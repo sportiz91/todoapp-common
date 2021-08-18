@@ -55,7 +55,8 @@ section {
   display: grid;
   grid:
     "header header header header" auto
-    "...... lists  tasks  ......" auto / 1fr minmax(100px, 300px)
+    "...... lists  tasks  ......" auto
+    "...... .....  delete ......" auto / 1fr minmax(100px, 300px)
     minmax(250px, 500px) 1fr;
   row-gap: 5rem;
   /* design: section 90vh and footer 10 vh. Then, we have the app container displayed as flex, and centered (justify content and align items center). Because we have auto height 
@@ -69,7 +70,8 @@ section {
     grid:
       "..... header ....." auto
       "..... lists  ....." auto
-      "..... tasks  ....." auto / 1fr 75% 1fr;
+      "..... tasks  ....." auto
+      "..... delete ....." auto / 1fr 75% 1fr;
 
     row-gap: 3rem;
   }
@@ -357,9 +359,16 @@ section {
 }
 
 .delete-stuff {
+  grid-area: delete;
+  margin-top: -160px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
+@media (max-width: 1024px) {
+  .delete-stuff {
+    margin-top: -110px;
+  }
 }
 
 .delete-stuff > .btn {
